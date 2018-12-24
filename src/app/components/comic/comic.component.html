@@ -1,0 +1,9 @@
+<div class="parent-div">
+  <button class="btn btn-info generate-btn" (click)="generateComic()">GENERATE</button>
+  <div class="child-div">
+    <div *ngIf = "comics">
+        <h2 class="text-left heading">{{comics.num}}. {{comics.title}}</h2>
+        <img src="{{comics.img}}" class="comic-imag img-responsive">
+    </div>
+  </div>
+</div>

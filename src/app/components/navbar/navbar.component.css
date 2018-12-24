@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&subset=latin-ext,vietnamese');
+
+.logo{
+    width: 40px;
+    position: relative;
+    top: -11px;
+}
+
+.logo-text{
+    width: 200px;
+    top: -44px;
+    position: relative;
+    left: 47px;
+}
+
+nav{
+    background:#fff;
+}
+
+.navbar-nav{
+    float: left;
+    margin: 0;
+    position: relative;
+    left: 90px;
+    background:#fff !important;
+}
+
+.navbar-custom .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+    color:#000;
+    opacity:1;
+    background:none;
+}
+
+.navbar-nav>li>a{
+    opacity:.2;
+    color:#000;
+}
+
+.navbar-custom .navbar-toggle .icon-bar {
+    background-color: #337ab7;
+}
