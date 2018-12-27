@@ -9,22 +9,28 @@ import { ComicService } from 'src/app/comic.service';
 export class ComicComponent implements OnInit {
 
 comics: any;
-num = 1;
-constructor(private comicService: ComicService) {
+randomNumArray: Array<number> = [];
+num: number;
+  constructor(private comicService: ComicService) {}
+  ngOnInit() {}
 
-}
-ngOnInit() {
-}
-
-generateComic() {
-  let randomNumber = Math.random()*1000;
-  this.num = Math.floor(randomNumber);
-  this.comicService.getComicByNumber(this.num).subscribe(comics => {
-    console.log(comics);
-    this.comics = comics;
-    console.log(this.comics);
-  });
-}
+  generateComic() {
+    this.num = Math.floor(Math.random() * 1000);
+                if (this.randomNumArray.indexOf(this.num) === -1) {
+                    this.randomNumArray.push(this.num);
+                    console.log(this.randomNumArray);
+                    this.comicService.getComicByNumber(this.num).subscribe(comics => {
+                      console.log(comics);
+                      this.comics = comics;
+                    });
+                    if (this.randomNumArray.length === 1000) {
+                        this.randomNumArray = [];
+                    }
+                } else {
+                    console.log('this number is already generated once = ' + this.num);
+                    this.generateComic();
+                }
+  }
 
 
 
