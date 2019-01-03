@@ -1,0 +1,6 @@
+
+
+<div class="parent-div">
+    <a [routerLink]= "['/comics', num]"><button class="btn btn-info generate-btn" (click)="generateRandomNum()">GENERATE</button></a>
+    <router-outlet (passRandNum)= "generateRandomNum()"></router-outlet>
+</div>

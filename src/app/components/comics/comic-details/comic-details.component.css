@@ -1,0 +1,54 @@
+.comic-image{
+    margin-top:20px;
+    width: 100%;
+    object-fit:cover;
+}
+
+.heading{
+    padding:20px;
+    font-weight:300;
+}
+
+.child-div{
+    position: relative;
+    top:-80px;
+    bottom:0;
+    right:0;
+    left:0;
+    margin:auto;
+    max-width:700px;
+    max-height:1200px;
+    background:#fff;
+    -webkit-box-shadow: 2px 4px 14px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 4px 14px -4px rgba(0,0,0,0.75);
+    box-shadow: 2px 4px 14px -4px rgba(0,0,0,0.75);
+}
+
+.loader {
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    position:absolute;
+    top:0;
+    bottom:0;
+    margin-top:100px;
+    margin-bottom:100px;
+    right:0;
+    left:0;
+    margin:100px auto;
+    border-top: 10px solid #3498db;
+    width: 80px;
+    height: 80px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

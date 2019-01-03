@@ -3,5 +3,32 @@
 body{
     font-family: 'Quicksand', sans-serif;
     background:#f2f2f2;
+    padding-top: 50px;
+}
+
+.navbar-custom{
+    background:#fff;
+}
+
+.logo{
+    width: 40px;
+    top: -10px;
+    position: relative;
+}
+nav a.active{
+    color:#000;
+}
+
+.logo-text{
+    width: 150px;
+    position: relative;
+    top: -46px;
+    right: -39px;
+    height: 33px;
+    margin-right: 50px;
+}
+
+.navbar-toggle, .icon-bar {
+    border:1px solid #286090;
 }
 
