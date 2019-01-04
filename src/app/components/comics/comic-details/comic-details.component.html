@@ -1,17 +1,25 @@
+<!-- <h3>{{errorMsg}}</h3> -->
+
 <div class="child-div">
-  <div class="load-bar" *ngIf="loading && comics">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-  </div>
+    
+    <div class="load-bar" *ngIf="loading && comics">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
   
-  <div *ngIf="comics">
-      <h2 class="text-left heading">{{comics.num}}. {{comics.title}}</h2>
-      <img src="{{comics.img}}" class="comic-image img-responsive">
-  </div>
+    <ng-container *ngIf="comics || !loading; else spinner">
+        <div>
+            <h2 class="text-left heading">{{comics.num}}. {{comics.title}}</h2>
+            <img src="{{comics.img}}" class="comic-image img-responsive">
+        </div>
+    </ng-container>
 
-  <div class="loader" *ngIf = 'loader && !comics'>
-
-  </div>
-
+    <ng-template #spinner>
+        <div class="loader"></div>
+    </ng-template>
 </div>
+
+<!-- <ng-template #err>
+    
+</ng-template> -->

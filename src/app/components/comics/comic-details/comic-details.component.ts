@@ -9,15 +9,14 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class ComicDetailsComponent implements OnInit {
 num: number;
+errorMsg: string;
 loading = false;
   comics: any;
-  loader = false;
+  // loader = false;
   constructor(private comicService: ComicService, private routes: ActivatedRoute) {
    }
 
   ngOnInit() {
-    this.loader = true;
-    this.loading = false;
     this.routes.params
       .subscribe(
         (params: Params) => {
@@ -35,7 +34,7 @@ loading = false;
       this.comics = comics;
       this.loading = false;
       console.log(this.comics.num);
-    });
+      });
   }
 
 }
