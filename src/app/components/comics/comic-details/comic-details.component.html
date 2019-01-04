@@ -1,5 +1,5 @@
 <div class="child-div">
-  <div class="load-bar" *ngIf="loading">
+  <div class="load-bar" *ngIf="loading && comics">
       <div class="bar"></div>
       <div class="bar"></div>
       <div class="bar"></div>
@@ -8,6 +8,10 @@
   <div *ngIf="comics">
       <h2 class="text-left heading">{{comics.num}}. {{comics.title}}</h2>
       <img src="{{comics.img}}" class="comic-image img-responsive">
+  </div>
+
+  <div class="loader" *ngIf = 'loader && !comics'>
+
   </div>
 
 </div>

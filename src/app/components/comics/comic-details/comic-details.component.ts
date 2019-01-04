@@ -11,10 +11,13 @@ export class ComicDetailsComponent implements OnInit {
 num: number;
 loading = false;
   comics: any;
+  loader = false;
   constructor(private comicService: ComicService, private routes: ActivatedRoute) {
    }
 
   ngOnInit() {
+    this.loader = true;
+    this.loading = false;
     this.routes.params
       .subscribe(
         (params: Params) => {
