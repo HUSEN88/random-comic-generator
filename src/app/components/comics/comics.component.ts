@@ -9,11 +9,11 @@ import { ComicService } from 'src/app/comic.service';
   styleUrls: ['./comics.component.css']
 })
 export class ComicsComponent implements OnInit {
-message: string;
 comics: any;
 randomNumArray: Array<any> = [];
 num: number;
-  constructor(private comicService: ComicService, private routes: ActivatedRoute) {}
+  constructor(private comicService: ComicService, private routes: ActivatedRoute) {
+  }
   ngOnInit() {
   }
 

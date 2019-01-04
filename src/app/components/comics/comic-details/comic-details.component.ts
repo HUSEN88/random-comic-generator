@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ComicService } from 'src/app/comic.service';
 import { ActivatedRoute, Params } from '@angular/router';
 
@@ -11,8 +11,6 @@ export class ComicDetailsComponent implements OnInit {
 num: number;
 loading = false;
   comics: any;
-  message: string;
-  randomNumArray: Array<any> = [];
   constructor(private comicService: ComicService, private routes: ActivatedRoute) {
    }
 
@@ -25,6 +23,7 @@ loading = false;
         }
       );
   }
+
 
   generateComic(num) {
     this.loading = true;

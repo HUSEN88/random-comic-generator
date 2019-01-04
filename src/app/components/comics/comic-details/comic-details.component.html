@@ -1,21 +1,13 @@
 <div class="child-div">
-  <div *ngIf="!loading else loadingTemplate">
+  <div class="load-bar" *ngIf="loading">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+  </div>
+  
+  <div *ngIf="comics">
       <h2 class="text-left heading">{{comics.num}}. {{comics.title}}</h2>
       <img src="{{comics.img}}" class="comic-image img-responsive">
   </div>
 
-<ng-template #loadingTemplate>
-  <div class="loader"></div>
-</ng-template>
-
-<!-- <div *ngIf = "loading else loaded">
-  loading...
-</div>
-<ng-template #loaded>
-  <div *ngIf= "comics">
-    <h2 class="text-left heading">{{comics.num}}. {{comics.title}}</h2>
-      <img src="{{comics.img}}" class="comic-image img-responsive">
-  </div>
-</ng-template> -->
-  
 </div>
