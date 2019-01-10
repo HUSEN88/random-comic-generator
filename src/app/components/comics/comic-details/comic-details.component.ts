@@ -9,9 +9,11 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class ComicDetailsComponent implements OnInit {
 num: number;
-errorMsg: string;
+error: string;
+errorMsg:string;
 loading = false;
   comics: any;
+  loadError = false;
   // loader = false;
   constructor(private comicService: ComicService, private routes: ActivatedRoute) {
    }
@@ -34,6 +36,12 @@ loading = false;
       this.comics = comics;
       this.loading = false;
       console.log(this.comics.num);
+      },
+      error => {
+        this.loadError = true;
+        this.error = error;
+        this.loading = false;
+        this.errorMsg = 'something went wrong';
       });
   }
 

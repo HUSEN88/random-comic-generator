@@ -23,7 +23,6 @@ num: number;
     this.num = Math.floor(Math.random() * (max - min + 1)) + min;
     if (this.randomNumArray.indexOf(this.num) === -1) {
       this.randomNumArray.push(this.num);
-      return this.num;
     } else if (this.randomNumArray.length === max) {
       console.log('all are used');
       this.randomNumArray = [];

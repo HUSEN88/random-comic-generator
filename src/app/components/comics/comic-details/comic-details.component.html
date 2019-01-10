@@ -8,7 +8,7 @@
         <div class="bar"></div>
     </div>
   
-    <ng-container *ngIf="comics || !loading; else spinner">
+    <ng-container *ngIf="comics || !loading && !loadError; else spinner">
         <div>
             <h2 class="text-left heading">{{comics.num}}. {{comics.title}}</h2>
             <img src="{{comics.img}}" class="comic-image img-responsive">
@@ -16,8 +16,15 @@
     </ng-container>
 
     <ng-template #spinner>
-        <div class="loader"></div>
+        <div class="loader" *ngIf = "!loadError else errorTemplate"></div>
     </ng-template>
+
+    <ng-template #errorTemplate>
+        <div *ngIf = "loadError" class="error">
+            {{errorMsg}}
+        </div>
+    </ng-template>
+        
 </div>
 
 <!-- <ng-template #err>
