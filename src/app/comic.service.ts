@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
@@ -16,7 +16,6 @@ export class ComicService {
       catchError(this.handleError)
     );
   }
-  
   handleError(error) {
       let errorMessage = '';
       if (error.error instanceof ErrorEvent) {
@@ -24,9 +23,10 @@ export class ComicService {
         errorMessage = `Error: ${error.error.message}`;
       } else {
         // server-side error
-        errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+        errorMessage = `Error Code: ${error.status},
+                        Message: ${error.message}`;
       }
       window.alert(errorMessage);
       return throwError(errorMessage);
-    }
+  }
 }
